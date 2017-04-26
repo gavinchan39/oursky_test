@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  <script>
+  var taskList=[];
+  function stopTimer()
+  {
+    clearInterval(dd);
+  }
+
+  function addTask()
+  {
+    document.getElementById("div1").style.background="white";
+    document.body.style.background = 'white';
+    document.getElementById('taskList').style.display = "inline"
+  //  console.log(document.getElementById('taskName').value);
+    taskList.push(document.getElementById('taskName').value)
+    showTaskList();
+
+
+    console.log(taskList.lenght);
+    console.log("hihi");
+  }
+
+  function showTaskList()
+  {
+    var text="";
+
+    for(var a= 0;a<taskList.length;++a)
+    {
+      console.log("hehe");
+      console.log(taskList[a]);
+      text =taskList[a]+"<br>";
+
+    }
+    document.getElementById('taskName1').innerHTML=text;
+  }
+
+
+/*
+  var minutesLabel = document.getElementById("minutes");
+          var secondsLabel = document.getElementById("seconds");
+          var totalSeconds = 0;
+          setInterval(setTime, 1000);
+
+          function setTime()
+          {
+              ++totalSeconds;
+              secondsLabel.innerHTML = pad(totalSeconds%60);
+              minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
+          }
+
+          function pad(val)
+          {
+              var valString = val + "";
+              if(valString.length < 2)
+              {
+                  return "0" + valString;
+              }
+              else
+              {
+                  return valString;
+              }
+          }
+          */
+      </script>
+
+
+  </script>
+
+
+  <head>
+    <meta charset="UTF-8">
+    <style>
+    body {background-color:#6CADFF;
+
+          }
+    body.div {
+      display: inline;
+    }
+    #header {text-align: center;
+            background: #6CADFF;
+            }
+    #inputBox {display:inline;}
+
+    #taskLisk {display:none;}
+    h1   {color: white;}
+    span {display: inline;}
+    </style>
+    <title>Task Timer</title>
+  </head>
+
+  <body>
+    <div name="header" id="header" class="col-xs-12 col-sm-12 col-md-12">
+      <div class="col-md-1  col-xs-1 col-sm-1 col-md-offset-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4">
+      <img  src="clock.png" alt="Clock" width="47" height="55">
+
+    </div>
+    <h1 class="col-md-2  col-xs-2 col-sm-2">Task Timer</h1>
+
+    </div>
+
+    <div id="div1">
+    <div class="input-group">
+
+      <input type="text" id="taskName" class="col-xs-4 col-sm-4 col-md-4 form-control" placeholder="Enter task name">
+      <span class="input-group-btn" onclick="addTask()">
+
+        <button class="btn btn-secondary" type="button" onclick="addTask()"><img src="play.png" alt="Enter"></button>
+      </span>
+
+
+    </div>
+
+    <div id="taskList" style="display: none" >
+      <span id="taskName1"></span>
+      <button id="stop" onclick="stopTimer()"><img  src="pause.png" alt="pause" width="47" height="55"></button>
+      <button><img  src="tick.png" alt="tick" width="47" height="55"></button>
+      <label id="minutes">00</label>:<label id="seconds">00</label>
+    <script type="text/javascript">
+        var minutesLabel = document.getElementById("minutes");
+        var secondsLabel = document.getElementById("seconds");
+        var totalSeconds = 0;
+        var dd =setInterval(setTime, 1000);
+
+        function setTime()
+        {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds%60);
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
+        }
+
+        function pad(val)
+        {
+            var valString = val + "";
+            if(valString.length < 2)
+            {
+                return "0" + valString;
+            }
+            else
+            {
+                return valString;
+            }
+        }
+    </script>
+    </div>
+  </div>
+
+
+
+
+
+  </body>
+</html>
